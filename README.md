@@ -1,2 +1,2 @@
 # m3553ng3r5-pwp
-Repo for my Personal Website Project (PWP)
+A portfolio project for Ian Tateisi, AKA M3553NG3R5
