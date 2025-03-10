@@ -1,5 +1,6 @@
-import "../index.css"
-import "flowbite"
+
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
     // Mobile menu toggle
