@@ -609,3 +609,51 @@ for (let i = 0; i < origamiElements.length; i++) {
     )
 }
 
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        subject: document.getElementById('subject').value,
+        message: document.getElementById('message').value
+    };
+
+    fetch('https://form-email-r8oy.onrender.com/ian.minami.02@gmail.com', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+    })
+        .then(response => {
+            return response.text().then(text => {
+                try {
+                    return JSON.parse(text);
+                } catch {
+                    return text;
+                }
+            });
+        })
+        .then(data => {
+            // Handle the response data here
+            const formMessage = document.getElementById('formMessage');
+            if (typeof data === 'object') {
+                formMessage.className = 'message message-success';
+                formMessage.textContent = 'Message sent successfully!';
+                document.getElementById('contactForm').reset(); // Reset the form
+            } else {
+                formMessage.className = 'message message-success';
+                formMessage.textContent = 'Message sent successfully!';
+                document.getElementById('contactForm').reset(); // Reset the form
+            }
+            formMessage.style.display = 'block';
+        })
+        .catch((error) => {
+            const formMessage = document.getElementById('formMessage');
+            formMessage.className = 'message message-error';
+            formMessage.textContent = 'An error occurred while sending the message.';
+            formMessage.style.display = 'block';
+            console.error('Error:', error);
+        });
+});
