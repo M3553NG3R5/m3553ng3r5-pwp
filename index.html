@@ -1,202 +1,338 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script type="text/javascript" src="/src/js/rabbit-ear.js"></script>
-    <title>M3553NG3R5 PWP</title>
-</head>
-<body class="bg-gray-400">
+    <!doctype html>
+    <html lang="en" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script type="text/javascript" src="/src/js/rabbit-ear.js"></script>
+        <title>M3553NG3R5 PWP</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            'cyber-black': '#0a0a0a',
+                            'cyber-purple': '#9333ea',
+                            'cyber-purple-light': '#a855f7',
+                            'cyber-purple-dark': '#7e22ce',
+                            'cyber-gray': '#1a1a1a',
+                        },
+                        fontFamily: {
+                            'cyber': ['Orbitron', 'sans-serif'],
+                        },
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body class="bg-black text-white font-cyber">
 
-<header class="p-2 bg-gray-700 text-2xl text-gray-200">
-    <div class="flex items-center">
-        <img src="" alt="placeholder" class="w-12 h-12 inline" />
-        <p class="text-xl font-bold inline ml-2">M3553NG3R5 Portfolio</p>
-    </div>
-</header>
-
-<!--Title-->
-<section class="flex flex-wrap justify-around items-center p-4 m-4">
-    <div class="flex flex-col items-center md:items-start">
-        <h2 class="text-2xl font-semibold text-gray-200 text-center md:text-left">Full-Stack-Web-Dev</h2>
-        <div class="flex mt-2">
-            <img src="/discord-logo.png" alt="discord logo" class="w-auto h-12 p-1"/>
-            <img src="/github-logo.png" alt="github logo" class="w-auto h-12 p-1"/>
-            <h3 class="flex font-semibold text-xl text-gray-200 text-center items-center justify-center p-1">M3553NG3R5</h3>
-        </div>
-    </div>
-    <div class="tab-box flex justify-center w-full md:w-auto mt-4 md:mt-0 duration-150">
-        <div class="w-80">
-            <!-- Tab Header -->
-            <div class="flex items-center justify-between bg-gray-200 px-4 py-2 rounded-t-lg cursor-pointer select-none tab-header">
-                <span class="text-gray-800 font-semibold">Origami Crane</span>
-                <span class="toggle-icon text-gray-600">▼</span> <!-- Default Closed -->
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-cyber-black/80 backdrop-blur-sm border-b border-cyber-purple/30">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-cyber-purple text-xl font-bold">ORIGAMI<span class="text-white">DEV</span></a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-cyber-purple transition-colors">Home</a>
+                    <a href="#about" class="hover:text-cyber-purple transition-colors">About</a>
+                    <a href="#skills" class="hover:text-cyber-purple transition-colors">Skills</a>
+                    <a href="#projects" class="hover:text-cyber-purple transition-colors">Projects</a>
+                </div>
+                <button class="md:hidden text-cyber-purple" id="mobile-menu-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
             </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-cyber-gray/90 backdrop-blur-sm" id="mobile-menu">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#home" class="hover:text-cyber-purple transition-colors py-2">Home</a>
+                <a href="#about" class="hover:text-cyber-purple transition-colors py-2">About</a>
+                <a href="#skills" class="hover:text-cyber-purple transition-colors py-2">Skills</a>
+                <a href="#projects" class="hover:text-cyber-purple transition-colors py-2">Projects</a>
+            </div>
+        </div>
+    </nav>
 
-            <!-- Tab Content   -->
-            <div class="tab-content bg-white border border-gray-300 rounded-b-lg p-4" style="visibility: visible;">
-                <div id="origami-1">
-                    <div class="script-link">
-
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center relative overflow-hidden pt-16">
+        <div class="absolute inset-0 z-0">
+            <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none" class="opacity-20">
+                <defs>
+                    <linearGradient id="grid-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#9333ea" />
+                        <stop offset="100%" stop-color="#7e22ce" />
+                    </linearGradient>
+                </defs>
+                <rect width="100" height="100" fill="url(#grid-gradient)" />
+                <path d="M0,20 L100,20 M0,40 L100,40 M0,60 L100,60 M0,80 L100,80 M20,0 L20,100 M40,0 L40,100 M60,0 L60,100 M80,0 L80,100" stroke="#9333ea" stroke-width="0.2" />
+            </svg>
+        </div>
+        <div class="container mx-auto px-4 z-10">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="w-full md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Full-Stack <span class="text-cyber-purple">Developer</span></h1>
+                    <h2 class="text-xl md:text-2xl mb-6 text-gray-400">Web Developer & Origami Artist</h2>
+                    <p class="mb-8 text-gray-300 max-w-lg">Creating digital experiences at the intersection of technology and mathematics. Specializing in computational origami and algorithmic paper folding techniques.</p>
+                    <div class="flex space-x-4">
+                        <a href="#projects" class="border border-cyber-purple text-cyber-purple hover:bg-cyber-purple/10 px-6 py-3 rounded-md transition-colors">View Work</a>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 flex justify-center">
+                    <div id="origami-1" class="relative w-64 md:w-80  border border-cyber-purple/30 bg-cyber-gray/50 shadow-lg shadow-cyber-purple/10 p-4 rounded-lg">
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!--About Me Line Break-->
-<section class="mx-4">
-    <div class="flex items-center space-x-4 my-4">
-        <h2 class="text-2xl font-bold text-gray-800">About Me</h2>
-        <div class="flex-1 border-t-2 border-gray-600"></div>
-    </div>
-</section>
-
-<!--About Me Section-->
-<section class="flex flex-wrap justify-around items-center p-4 m-4">
-    <div class="tab-box flex justify-center w-full md:w-auto mb-4 md:mb-0">
-        <div class="w-100">
-            <!-- Tab Header -->
-            <div class="flex items-center justify-between bg-gray-200 px-4 py-2 rounded-t-lg cursor-pointer select-none tab-header">
-                <span class="text-gray-800 font-semibold">Origami Crane</span>
-                <span class="toggle-icon text-gray-600">▼</span> <!-- Default Closed -->
-            </div>
-
-            <!-- Tab Content   -->
-            <div class="tab-content bg-white border border-gray-300 rounded-b-lg p-4" style="visibility: visible;">
-                <div id="origami-2">
-                    <div class="script-link">
-
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-cyber-gray">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">ABOUT <span class="text-cyber-purple">ME</span></h2>
+            <div class="flex flex-col md:flex-row-reverse items-center">
+                <div class="w-full md:w-1/2 mb-10 md:mb-0 md:pl-10">
+                    <div id="origami-2" class="relative w-64 md:w-80  mx-auto border border-cyber-purple/30 bg-cyber-gray/50 shadow-lg shadow-cyber-purple/10 p-4 rounded-lg">
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <p class="text-gray-300 mb-6 font-mono">
+                        I’m a <strong>full-stack developer</strong> and <strong>origami artist</strong>, combining technical expertise with creativity to craft both digital experiences and intricate paper designs. With a strong foundation in front-end and back-end development, I build dynamic, user-friendly applications that are as structured and efficient as a well-folded origami piece. My passion for origami inspires my approach to coding&mdash;blending precision, problem-solving, and innovation to transform complex challenges into elegant solutions. Whether I’m developing sleek web applications or folding intricate designs, I thrive on attention to detail and the pursuit of perfection in every creation.
+                    </p>
+                    <div class="flex space-x-4  mt-8">
+                        <a href="https://github.com/M3553NG3R5" class="bg-cyber-black border border-cyber-purple text-cyber-purple hover:bg-cyber-purple/10 p-3 rounded-full transition-colors mr-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="www.linkedin.com/in/ian-tateisi" class="bg-cyber-black border border-cyber-purple text-cyber-purple hover:bg-cyber-purple/10 p-3 rounded-full transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/m3553ng3r5/" class="bg-cyber-black border border-cyber-purple text-cyber-purple hover:bg-cyber-purple/10 p-3 rounded-full transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                        d="M18.946 6.29a6.606 6.606 0 0 0-.418-2.185 4.412 4.412 0 0 0-1.039-1.594 4.412 4.412 0 0 0-1.594-1.039 6.606 6.606 0 0 0-2.184-.418C12.75 1.01 12.444 1 10 1s-2.75.01-3.71.054a6.606 6.606 0 0 0-2.185.418A4.412 4.412 0 0 0 2.51 2.511a4.412 4.412 0 0 0-1.039 1.594 6.606 6.606 0 0 0-.418 2.184C1.01 7.25 1 7.556 1 10s.01 2.75.054 3.71a6.606 6.606 0 0 0 .418 2.185 4.412 4.412 0 0 0 1.039 1.594 4.411 4.411 0 0 0 1.594 1.039 6.606 6.606 0 0 0 2.184.418C7.25 18.99 7.556 19 10 19s2.75-.01 3.71-.054a6.606 6.606 0 0 0 2.185-.418 4.602 4.602 0 0 0 2.633-2.633 6.606 6.606 0 0 0 .418-2.184C18.99 12.75 19 12.444 19 10s-.01-2.75-.054-3.71zm-1.62 7.347a4.978 4.978 0 0 1-.31 1.67 2.98 2.98 0 0 1-1.708 1.709 4.979 4.979 0 0 1-1.671.31c-.95.043-1.234.052-3.637.052s-2.688-.009-3.637-.052a4.979 4.979 0 0 1-1.67-.31 2.788 2.788 0 0 1-1.036-.673 2.788 2.788 0 0 1-.673-1.035 4.978 4.978 0 0 1-.31-1.671c-.043-.95-.052-1.234-.052-3.637s.009-2.688.052-3.637a4.979 4.979 0 0 1 .31-1.67 2.788 2.788 0 0 1 .673-1.036 2.788 2.788 0 0 1 1.035-.673 4.979 4.979 0 0 1 1.671-.31c.95-.043 1.234-.052 3.637-.052s2.688.009 3.637.052a4.979 4.979 0 0 1 1.67.31 2.788 2.788 0 0 1 1.036.673 2.788 2.788 0 0 1 .673 1.035 4.979 4.979 0 0 1 .31 1.671c.043.95.052 1.234.052 3.637s-.009 2.688-.052 3.637zM10 5.378A4.622 4.622 0 1 0 14.622 10 4.622 4.622 0 0 0 10 5.378zM10 13a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm5.884-7.804a1.08 1.08 0 1 1-1.08-1.08 1.08 1.08 0 0 1 1.08 1.08z"
+                                        transform="translate(2 2)"></path>
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="w-full md:w-1/2">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam urna metus, sagittis ut lobortis vulputate, mattis quis nisl. Morbi pellentesque aliquam mollis. Nullam semper vehicula ullamcorper. Mauris vulputate ligula at pellentesque euismod. Mauris mattis dictum ultricies. Donec sed tellus venenatis, luctus mi at, rutrum magna. Donec id ante nunc. Curabitur eu eros bibendum, lacinia nibh vitae, vestibulum est. In fermentum lorem vitae sapien varius, a mollis felis viverra. Pellentesque molestie ligula a dui dapibus mollis. Fusce feugiat, purus ut commodo aliquam, lorem magna bibendum sapien, quis scelerisque erat libero a augue. Nullam odio augue, fermentum quis dui nec, laoreet lobortis erat. Mauris in feugiat turpis. Nulla ligula turpis, tincidunt vitae egestas id, rutrum in diam. Donec rhoncus, velit ac fringilla porta, purus quam lacinia odio, sit amet sagittis nisi ante non velit. Praesent mauris erat, condimentum at eleifend id, dapibus et lorem.</p>
-    </div>
-</section>
+    </section>
 
-<section class="mx-4">
-    <div class="flex items-center space-x-4 my-4">
-        <div class="flex-1 border-t-2 border-gray-600"></div>
-        <h2 class="text-2xl font-bold text-gray-800">Skills</h2>
-    </div>
-</section>
-
-<!--Skills Section-->
-<section class="flex flex-wrap justify-around items-center p-4 m-4">
-    <div class="w-full md:w-auto mb-4 md:mb-0">
-        <ul class="list-disc pl-5">
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>React</li>
-            <li>UI/UX Design</li>
-        </ul>
-    </div>
-
-    <div class="tab-box flex justify-center w-full md:w-auto mb-4 md:mb-0">
-        <div class="w-80">
-            <!-- Tab Header -->
-            <div class="flex items-center justify-between bg-gray-200 px-4 py-2 rounded-t-lg cursor-pointer select-none tab-header">
-                <span class="text-gray-800 font-semibold">Origami Crane</span>
-                <span class="toggle-icon text-gray-600">▼</span> <!-- Default Closed -->
-            </div>
-
-            <!-- Tab Content -->
-            <div class="tab-content bg-white border border-gray-300 rounded-b-lg p-4" style="visibility: visible;">
-                <div id="origami-3">
-                    <div class="script-link">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="mx-4">
-    <div class="flex items-center space-x-4 my-4">
-        <h2 class="text-2xl font-bold text-gray-800">Skills</h2>
-        <div class="flex-1 border-t-2 border-gray-600"></div>
-    </div>
-</section>
-
-<section class="flex flex-wrap justify-around items-center p-4 m-4">
-    <div class="tab-box flex justify-center w-full md:w-auto mb-4 md:mb-0">
-        <div class="w-80">
-            <!-- Tab Header -->
-            <div class="flex items-center justify-between bg-gray-200 px-4 py-2 rounded-t-lg cursor-pointer select-none tab-header">
-                <span class="text-gray-800 font-semibold">Origami Crane</span>
-                <span class="toggle-icon text-gray-600">▼</span> <!-- Default Closed -->
-            </div>
-
-            <!-- Tab Content -->
-            <div class="tab-content bg-white border border-gray-300 rounded-b-lg p-4" style="visibility: visible;">
-                <div id="origami-4">
-                    <div class="script-link">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="tab-box flex justify-center w-full md:w-auto mb-4 md:mb-0">
-        <div class="w-80">
-            <!-- Tab Header -->
-            <div class="flex items-center justify-between bg-gray-200 px-4 py-2 rounded-t-lg cursor-pointer select-none tab-header">
-                <span class="text-gray-800 font-semibold">Origami Crane</span>
-                <span class="toggle-icon text-gray-600">▼</span> <!-- Default Closed -->
-            </div>
-
-            <!-- Tab Content -->
-            <div class="tab-content bg-white border border-gray-300 rounded-b-lg p-4" style="visibility: visible;">
-                <section>
-                    <div id="origami-5">
-                        <div class="script-link">
-
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-cyber-black">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">TECH <span class="text-cyber-purple">SKILLS</span></h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="w-full md:w-1/2 mb-10 md:mb-0">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="p-6 bg-cyber-gray rounded-lg border border-cyber-purple/30 hover:border-cyber-purple transition-colors">
+                            <h3 class="text-xl font-semibold mb-3">Frontend</h3>
+                            <ul class="space-y-2 text-gray-300">
+                                <li class="flex items-center">
+                                    <span class="text-cyber-purple mr-2">›</span> HTML<span class="text-cyber-purple">.5</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="text-cyber-purple mr-2">›</span> CSS<span class="text-cyber-purple">.3</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="text-cyber-purple mr-2">›</span> JavaScript<span class="text-cyber-purple">.ES6</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="text-cyber-purple mr-2">›</span> React<span class="text-cyber-purple">.js</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="p-6 bg-cyber-gray rounded-lg border border-cyber-purple/30 hover:border-cyber-purple transition-colors">
+                            <h3 class="text-xl font-semibold mb-3">Backend</h3>
+                            <ul class="space-y-2 text-gray-300">
+                                <li class="flex items-center">
+                                    <span class="text-cyber-purple mr-2">›</span> Node.js
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="text-cyber-purple mr-2">›</span> Express
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="text-cyber-purple mr-2">›</span> MongoDB
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="text-cyber-purple mr-2">›</span> Python
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="p-6 bg-cyber-gray rounded-lg border border-cyber-purple/30 hover:border-cyber-purple transition-colors">
+                            <h3 class="text-xl font-semibold mb-3">Design</h3>
+                            <ul class="space-y-2 text-gray-300">
+                                <li class="flex items-center">
+                                    <span class="text-cyber-purple mr-2">›</span> Figma
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="text-cyber-purple mr-2">›</span> Adobe XD
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="text-cyber-purple mr-2">›</span> UI/UX Design
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="text-cyber-purple mr-2">›</span> Origami Design
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                </section>
+                </div>
+                <div class="w-full md:w-1/2 flex justify-center">
+                    <div id="origami-3" class="relative w-64 md:w-80 border border-cyber-purple/30 bg-cyber-gray/50 shadow-lg shadow-cyber-purple/10 p-4 rounded-lg">
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="tab-box flex justify-center w-full md:w-auto">
-        <div class="w-80">
-            <!-- Tab Header -->
-            <div class="flex items-center justify-between bg-gray-200 px-4 py-2 rounded-t-lg cursor-pointer select-none tab-header">
-                <span class="text-gray-800 font-semibold">Origami Crane</span>
-                <span class="toggle-icon text-gray-600">▼</span> <!-- Default Closed -->
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-cyber-gray">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">ORIGAMI <span class="text-cyber-purple">SIMS</span></h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                <!-- Project 1 -->
+                <div class="bg-cyber-black rounded-lg overflow-hidden border border-cyber-purple/30 hover:border-cyber-purple transition-all hover:shadow-lg hover:shadow-cyber-purple/20">
+                    <div class="relative">
+                        <div id="origami-4" class="aspect-video bg-cyber-gray flex items-center justify-center">
+                            <div class="script-link h-full"></div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Line Intersection</h3>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-cyber-black rounded-lg overflow-hidden border border-cyber-purple/30 hover:border-cyber-purple transition-all hover:shadow-lg hover:shadow-cyber-purple/20">
+                    <div class="relative">
+                        <div id="origami-5" class="aspect-video bg-cyber-gray flex items-center justify-center">
+                            <div class="script-link h-full"></div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Paper Splitting</h3>
+                    </div>
+                </div>
             </div>
 
-            <!-- Tab Content -->
-            <div class="tab-content bg-white border border-gray-300 rounded-b-lg p-4" style="visibility: visible;">
-                <div id="origami-6">
-                    <div class="script-link">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project 3 -->
+                <div class="bg-cyber-black rounded-lg overflow-hidden border border-cyber-purple/30 hover:border-cyber-purple transition-all hover:shadow-lg hover:shadow-cyber-purple/20">
+                    <div class="relative">
+                        <div id="origami-6" class="aspect-video bg-cyber-gray flex items-center justify-center">
+                            <div class="script-link h-full"></div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Project Gamma</h3>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="bg-cyber-black rounded-lg overflow-hidden border border-cyber-purple/30 hover:border-cyber-purple transition-all hover:shadow-lg hover:shadow-cyber-purple/20">
+                    <div class="relative">
+                        <div id="canvas-origami-vertex" class="aspect-video bg-cyber-gray flex items-center justify-center">
+                            <div class="script-link h-full"></div>
+                        </div>
+
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Computational Crease Pattern Analyzer</h3>
 
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-</section>
-
-<section class="w-full">
-    <div id="canvas-origami-vertex">
-        <div class="script-link">
-
+    <!-- Footer -->
+    <footer class="py-10 bg-cyber-gray border-t border-cyber-purple/30">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-cyber-purple text-xl font-bold">ORIGAMI<span class="text-white">DEV</span></a>
+                    <p class="text-gray-400 mt-2">Creating digital experiences for the future.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://github.com/M3553NG3R5" class="bg-cyber-black border border-cyber-purple text-cyber-purple hover:bg-cyber-purple/10 p-3 rounded-full transition-colors mr-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="www.linkedin.com/in/ian-tateisi" class="bg-cyber-black border border-cyber-purple text-cyber-purple hover:bg-cyber-purple/10 p-3 rounded-full transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/m3553ng3r5/" class="bg-cyber-black border border-cyber-purple text-cyber-purple hover:bg-cyber-purple/10 p-3 rounded-full transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                    d="M18.946 6.29a6.606 6.606 0 0 0-.418-2.185 4.412 4.412 0 0 0-1.039-1.594 4.412 4.412 0 0 0-1.594-1.039 6.606 6.606 0 0 0-2.184-.418C12.75 1.01 12.444 1 10 1s-2.75.01-3.71.054a6.606 6.606 0 0 0-2.185.418A4.412 4.412 0 0 0 2.51 2.511a4.412 4.412 0 0 0-1.039 1.594 6.606 6.606 0 0 0-.418 2.184C1.01 7.25 1 7.556 1 10s.01 2.75.054 3.71a6.606 6.606 0 0 0 .418 2.185 4.412 4.412 0 0 0 1.039 1.594 4.411 4.411 0 0 0 1.594 1.039 6.606 6.606 0 0 0 2.184.418C7.25 18.99 7.556 19 10 19s2.75-.01 3.71-.054a6.606 6.606 0 0 0 2.185-.418 4.602 4.602 0 0 0 2.633-2.633 6.606 6.606 0 0 0 .418-2.184C18.99 12.75 19 12.444 19 10s-.01-2.75-.054-3.71zm-1.62 7.347a4.978 4.978 0 0 1-.31 1.67 2.98 2.98 0 0 1-1.708 1.709 4.979 4.979 0 0 1-1.671.31c-.95.043-1.234.052-3.637.052s-2.688-.009-3.637-.052a4.979 4.979 0 0 1-1.67-.31 2.788 2.788 0 0 1-1.036-.673 2.788 2.788 0 0 1-.673-1.035 4.978 4.978 0 0 1-.31-1.671c-.043-.95-.052-1.234-.052-3.637s.009-2.688.052-3.637a4.979 4.979 0 0 1 .31-1.67 2.788 2.788 0 0 1 .673-1.036 2.788 2.788 0 0 1 1.035-.673 4.979 4.979 0 0 1 1.671-.31c.95-.043 1.234-.052 3.637-.052s2.688.009 3.637.052a4.979 4.979 0 0 1 1.67.31 2.788 2.788 0 0 1 1.036.673 2.788 2.788 0 0 1 .673 1.035 4.979 4.979 0 0 1 .31 1.671c.043.95.052 1.234.052 3.637s-.009 2.688-.052 3.637zM10 5.378A4.622 4.622 0 1 0 14.622 10 4.622 4.622 0 0 0 10 5.378zM10 13a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm5.884-7.804a1.08 1.08 0 1 1-1.08-1.08 1.08 1.08 0 0 1 1.08 1.08z"
+                                    transform="translate(2 2)"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
+    </footer>
 
-<script type="module" src="/src/js/main.js"></script>
-</body>
+    <script type="module" src="/src/js/main.js"></script>
+    <style>
+        /* Scan line effect */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                    rgba(18, 16, 16, 0) 50%,
+                    rgba(147, 51, 234, 0.02) 50%
+            );
+            background-size: 100% 4px;
+            z-index: 1000;
+            pointer-events: none;
+            animation: scanlines 0.2s linear infinite;
+        }
 
-</html>
+        @keyframes scanlines {
+            from { background-position: 0 0; }
+            to { background-position: 0 4px; }
+        }
+
+        /* Origami canvas styling */
+        #origami-1, #origami-2, #origami-3, #origami-4, #origami-5, #origami-6, #canvas-origami-vertex {
+            filter: drop-shadow(0 0 5px rgba(147, 51, 234, 0.5));
+        }
+
+        /* Make the origami elements fit the cyberpunk theme */
+        .stroke-pen-0 { stroke: #9333ea !important; }
+        .stroke-pen-1 { stroke: #a855f7 !important; }
+        .stroke-pen-2 { stroke: #7e22ce !important; }
+        .fill-pen-0 { fill: #9333ea !important; }
+        .fill-pen-1 { fill: #a855f7 !important; }
+        .fill-background { fill: #1a1a1a !important; }
+        .stroke-gold { stroke: #a855f7 !important; }
+        .fill-gold { fill: #a855f7 !important; }
+        .stroke-blue { stroke: #9333ea !important; }
+        .fill-blue { fill: #9333ea !important; }
+        .stroke-red { stroke: #a855f7 !important; }
+        .fill-red { fill: #a855f7 !important; }
+    </style>
+    </body>
+
+    </html>
+
